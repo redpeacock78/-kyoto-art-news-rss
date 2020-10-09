@@ -18,12 +18,12 @@ job:on-schedule:
   - git checkout ${CI_COMMIT_REF_NAME}
   - git pull
   - mkdir -p public
-  - curl -sL https://kyotoartnews.page.link/all >> public/all.xml
-  - curl -sL https://kyotoartnews.page.link/life >> public/life.xml
-  - curl -sL https://kyotoartnews.page.link/teach >> public/teach.xml
-  - curl -sL https://kyotoartnews.page.link/event >> public/event.xml
-  - curl -sL https://kyotoartnews.page.link/emergency >> public/emergency.xml
-  - curl -sL https://kyotoartnews.page.link/scholarship >> public/scholarship.xml
+  - curl -sL https://kyotoartnews.page.link/all > public/all.xml
+  - curl -sL https://kyotoartnews.page.link/life > public/life.xml
+  - curl -sL https://kyotoartnews.page.link/teach > public/teach.xml
+  - curl -sL https://kyotoartnews.page.link/event > public/event.xml
+  - curl -sL https://kyotoartnews.page.link/emergency > public/emergency.xml
+  - curl -sL https://kyotoartnews.page.link/scholarship > public/scholarship.xml
   - git add public/*.xml
   - git status
   - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
@@ -50,12 +50,12 @@ job:
   - git checkout ${CI_COMMIT_REF_NAME}
   - git pull
   - mkdir -p public
-  - curl -sL https://kyotoartnews.page.link/all >> public/all.xml
-  - curl -sL https://kyotoartnews.page.link/life >> public/life.xml
-  - curl -sL https://kyotoartnews.page.link/teach >> public/teach.xml
-  - curl -sL https://kyotoartnews.page.link/event >> public/event.xml
-  - curl -sL https://kyotoartnews.page.link/emergency >> public/emergency.xml
-  - curl -sL https://kyotoartnews.page.link/scholarship >> public/scholarship.xml
+  - curl -sL https://kyotoartnews.page.link/all > public/all.xml
+  - curl -sL https://kyotoartnews.page.link/life > public/life.xml
+  - curl -sL https://kyotoartnews.page.link/teach > public/teach.xml
+  - curl -sL https://kyotoartnews.page.link/event > public/event.xml
+  - curl -sL https://kyotoartnews.page.link/emergency > public/emergency.xml
+  - curl -sL https://kyotoartnews.page.link/scholarship > public/scholarship.xml
   - git add public/*.xml
   - git status
   - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
