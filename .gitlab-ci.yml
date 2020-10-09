@@ -4,6 +4,8 @@ job:on-schedule:
   only:
   - schedules
   script:
+  - apk update
+  - apk add openssh
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -34,6 +36,8 @@ job:
   except:
   - schedules
   script:
+  - apk update
+  - apk add openssh
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
