@@ -1,4 +1,4 @@
-image: ubuntu:latest
+image: alpine:latest
 
 job:on-schedule:
   only:
