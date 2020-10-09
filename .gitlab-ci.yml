@@ -12,6 +12,7 @@ job:on-schedule:
   - 'which ssh-agent || ( apk add --update openssh )'
   - eval "$(ssh-agent -s)"
   - echo "${SSH_PRIVATE_KEY}" >> ~/.ssh/id_rsa_key
+  - chmod 0600 ~/.ssh/id_rsa_key
   - eval "$(ssh-agent -s)"
   - ssh-add ~/.ssh/id_rsa_key > /dev/null
   - git config --global user.name "redpeacock78"
@@ -45,6 +46,7 @@ job:
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
   - 'which ssh-agent || ( apk add --update openssh )'
   - echo "${SSH_PRIVATE_KEY}" >> ~/.ssh/id_rsa_key
+  - chmod 0600 ~/.ssh/id_rsa_key
   - eval "$(ssh-agent -s)"
   - ssh-add ~/.ssh/id_rsa_key > /dev/null
   - git config --global user.name "redpeacock78"
