@@ -5,7 +5,7 @@ job:on-schedule:
   - schedules
   script:
   - apk update
-  - apk add openssh bash git
+  - apk add openssh bash git curl
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -37,7 +37,7 @@ job:
   - schedules
   script:
   - apk update
-  - apk add openssh bash git
+  - apk add openssh bash git curl
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
