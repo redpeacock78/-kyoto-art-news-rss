@@ -5,7 +5,7 @@ job:on-schedule:
   - schedules
   script:
   - apk update
-  - apk add openssh bash git curl
+  - apk --no-cache add openssh bash git curl
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -26,7 +26,7 @@ job:on-schedule:
   - curl -sL https://kyotoartnews.page.link/scholarship >> public/scholarship.xml
   - git add public/*.xml
   - git status
-  - ret=$(git status| sed -ne 's|.*\(clean\)|\1|p')
+  - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
   - if [[ -z ${ret} ]]; then
   -   git commit -m '[ci skip] Push by GitLab runner.'
   -   git push
@@ -37,7 +37,7 @@ job:
   - schedules
   script:
   - apk update
-  - apk add openssh bash git curl
+  - apk --no-cache add openssh bash git curl
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -58,7 +58,7 @@ job:
   - curl -sL https://kyotoartnews.page.link/scholarship >> public/scholarship.xml
   - git add public/*.xml
   - git status
-  - ret=$(git status| sed -ne 's|.*\(clean\)|\1|p')
+  - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
   - if [[ -z ${ret} ]]; then
   -   git commit -m '[ci skip] Push by GitLab runner.'
   -   git push
