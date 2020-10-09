@@ -1,35 +1,36 @@
 image: ubuntu:latest
 
 job:on-schedule:
+  only:
+  - schedules
+  script:
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
+  - 'which ssh-agent || ( apk add --update openssh )'
+  - eval "$(ssh-agent -s)"
+  - echo "${SSH_PRIVATE_KEY}" | ssh-add - > /dev/null
+  - git config --global user.name "redpeacock78"
+  - git config --global user.email "scarletpeacock78@gmail.com"
+  - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
+  - git checkout ${CI_COMMIT_REF_NAME}
+  - git pull
+  - mkdir -p public
+  - curl -sL https://kyotoartnews.page.link/all >> public/all.xml
+  - curl -sL https://kyotoartnews.page.link/life >> public/life.xml
+  - curl -sL https://kyotoartnews.page.link/teach >> public/teach.xml
+  - curl -sL https://kyotoartnews.page.link/event >> public/event.xml
+  - curl -sL https://kyotoartnews.page.link/emergency >> public/emergency.xml
+  - curl -sL https://kyotoartnews.page.link/scholarship >> public/scholarship.xml
+  - git add public/*.xml
+  - git status
+  - ret=$(git status| sed -ne 's|.*\(clean\)|\1|p')
+  - if [[ -z ${ret} ]]; then
+  -   git commit -m '[ci skip] Push by GitLab runner.'
+  -   git push
+  - fi
   pages:
-    only:
-    - schedules
     stage: deploy
-    script:
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
-    - 'which ssh-agent || ( apk add --update openssh )'
-    - eval "$(ssh-agent -s)"
-    - echo "${SSH_PRIVATE_KEY}" | ssh-add - > /dev/null
-    - git config --global user.name "redpeacock78"
-    - git config --global user.email "scarletpeacock78@gmail.com"
-    - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
-    - git checkout ${CI_COMMIT_REF_NAME}
-    - git pull
-    - curl -sL https://kyotoartnews.page.link/all >> public/all.xml
-    - curl -sL https://kyotoartnews.page.link/life >> public/life.xml
-    - curl -sL https://kyotoartnews.page.link/teach >> public/teach.xml
-    - curl -sL https://kyotoartnews.page.link/event >> public/event.xml
-    - curl -sL https://kyotoartnews.page.link/emergency >> public/emergency.xml
-    - curl -sL https://kyotoartnews.page.link/scholarship >> public/scholarship.xml
-    - git add public/*.xml
-    - git status
-    - ret=$(git status| sed -ne 's|.*\(clean\)|\1|p')
-    - if [[ -z ${ret} ]]; then
-    -   git commit -m '[ci skip] Push by GitLab runner.'
-    -   git push
-    - fi
     artifacts:
       paths:
       - public
@@ -37,35 +38,36 @@ job:on-schedule:
     - master
 
 job:
+  except:
+  - schedules
+  script:
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
+  - 'which ssh-agent || ( apk add --update openssh )'
+  - eval "$(ssh-agent -s)"
+  - echo "${SSH_PRIVATE_KEY}" | ssh-add - > /dev/null
+  - git config --global user.name "redpeacock78"
+  - git config --global user.email "scarletpeacock78@gmail.com"
+  - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
+  - git checkout ${CI_COMMIT_REF_NAME}
+  - git pull
+  - curl -sL https://kyotoartnews.page.link/all >> public/all.xml
+  - curl -sL https://kyotoartnews.page.link/life >> public/life.xml
+  - curl -sL https://kyotoartnews.page.link/teach >> public/teach.xml
+  - curl -sL https://kyotoartnews.page.link/event >> public/event.xml
+  - curl -sL https://kyotoartnews.page.link/emergency >> public/emergency.xml
+  - curl -sL https://kyotoartnews.page.link/scholarship >> public/scholarship.xml
+  - mkdir -p public
+  - git add public/*.xml
+  - git status
+  - ret=$(git status| sed -ne 's|.*\(clean\)|\1|p')
+  - if [[ -z ${ret} ]]; then
+  -   git commit -m '[ci skip] Push by GitLab runner.'
+  -   git push
+  - fi
   pages:
-    except:
-    - schedules
     stage: deploy
-    script:
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
-    - 'which ssh-agent || ( apk add --update openssh )'
-    - eval "$(ssh-agent -s)"
-    - echo "${SSH_PRIVATE_KEY}" | ssh-add - > /dev/null
-    - git config --global user.name "redpeacock78"
-    - git config --global user.email "scarletpeacock78@gmail.com"
-    - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
-    - git checkout ${CI_COMMIT_REF_NAME}
-    - git pull
-    - curl -sL https://kyotoartnews.page.link/all >> public/all.xml
-    - curl -sL https://kyotoartnews.page.link/life >> public/life.xml
-    - curl -sL https://kyotoartnews.page.link/teach >> public/teach.xml
-    - curl -sL https://kyotoartnews.page.link/event >> public/event.xml
-    - curl -sL https://kyotoartnews.page.link/emergency >> public/emergency.xml
-    - curl -sL https://kyotoartnews.page.link/scholarship >> public/scholarship.xml
-    - git add public/*.xml
-    - git status
-    - ret=$(git status| sed -ne 's|.*\(clean\)|\1|p')
-    - if [[ -z ${ret} ]]; then
-    -   git commit -m '[ci skip] Push by GitLab runner.'
-    -   git push
-    - fi
     artifacts:
       paths:
       - public
