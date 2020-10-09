@@ -29,13 +29,6 @@ job:on-schedule:
   -   git commit -m '[ci skip] Push by GitLab runner.'
   -   git push
   - fi
-  pages:
-    stage: deploy
-    artifacts:
-      paths:
-      - public
-    only:
-    - master
 
 job:
   except:
@@ -66,10 +59,13 @@ job:
   -   git commit -m '[ci skip] Push by GitLab runner.'
   -   git push
   - fi
-  pages:
-    stage: deploy
-    artifacts:
-      paths:
-      - public
-    only:
-    - master
+
+pages:
+  stage: deploy
+  script:
+  - echo 'Nothing to do...'
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
