@@ -11,7 +11,7 @@ job:on-schedule:
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
   - 'which ssh-agent || ( apk add --update openssh )'
   - eval $(ssh-agent -s)
-  - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}') > /dev/null"
+  - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
   - git config --global user.name "redpeacock78"
   - git config --global user.email "scarletpeacock78@gmail.com"
   - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
@@ -43,7 +43,7 @@ job:
   - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
   - 'which ssh-agent || ( apk add --update openssh )'
   - eval $(ssh-agent -s)
-  - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}') > /dev/null"
+  - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
   - git config --global user.name "redpeacock78"
   - git config --global user.email "scarletpeacock78@gmail.com"
   - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
