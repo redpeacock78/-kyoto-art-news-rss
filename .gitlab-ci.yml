@@ -3,6 +3,8 @@ image: alpine:latest
 job:on-schedule:
   only:
     - schedules
+  except:
+    - pipelines
   script:
     - apk update
     - apk --no-cache add openssh bash git curl
@@ -38,6 +40,7 @@ job:on-schedule:
 job:
   except:
     - schedules
+    - pipelines
   script:
     - apk update
     - apk --no-cache add openssh bash git curl
@@ -67,13 +70,13 @@ job:
     -   git push
     - fi
     - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline" > /dev/null
-  except:
-    - pipelines
 
 pages:
   only:
     variables:
       - $variables[TRIGERRED_JOB] == "pages"
+  except:
+    - pipelines
   stage: deploy
   script:
     - echo 'Nothing to do...'
