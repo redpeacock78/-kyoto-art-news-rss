@@ -2,74 +2,83 @@ image: alpine:latest
 
 job:on-schedule:
   only:
-  - schedules
+    - schedules
   script:
-  - apk update
-  - apk --no-cache add openssh bash git curl
-  - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh
-  - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
-  - 'which ssh-agent || ( apk add --update openssh )'
-  - eval $(ssh-agent -s)
-  - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
-  - git config --global user.name "redpeacock78"
-  - git config --global user.email "scarletpeacock78@gmail.com"
-  - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
-  - git checkout ${CI_COMMIT_REF_NAME}
-  - git pull
-  - mkdir -p public
-  - curl -sL https://kyotoartnews.page.link/all > public/all.xml
-  - curl -sL https://kyotoartnews.page.link/life > public/life.xml
-  - curl -sL https://kyotoartnews.page.link/teach > public/teach.xml
-  - curl -sL https://kyotoartnews.page.link/event > public/event.xml
-  - curl -sL https://kyotoartnews.page.link/emergency > public/emergency.xml
-  - curl -sL https://kyotoartnews.page.link/scholarship > public/scholarship.xml
-  - git add public/*.xml
-  - git status
-  - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
-  - if [[ -z ${ret} ]]; then
-  -   git commit -m '[ci skip] Push by GitLab runner.'
-  -   git push
-  - fi
+    - apk update
+    - apk --no-cache add openssh bash git curl
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
+    - 'which ssh-agent || ( apk add --update openssh )'
+    - eval $(ssh-agent -s)
+    - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
+    - git config --global user.name "redpeacock78"
+    - git config --global user.email "scarletpeacock78@gmail.com"
+    - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
+    - git checkout ${CI_COMMIT_REF_NAME}
+    - git pull
+    - mkdir -p public
+    - curl -sL https://kyotoartnews.page.link/all > public/all.xml
+    - curl -sL https://kyotoartnews.page.link/life > public/life.xml
+    - curl -sL https://kyotoartnews.page.link/teach > public/teach.xml
+    - curl -sL https://kyotoartnews.page.link/event > public/event.xml
+    - curl -sL https://kyotoartnews.page.link/emergency > public/emergency.xml
+    - curl -sL https://kyotoartnews.page.link/scholarship > public/scholarship.xml
+    - git add public/*.xml
+    - git status
+    - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
+    - if [[ -z ${ret} ]]; then
+    -   git commit -m '[ci skip] Push by GitLab runner.'
+    -   git push
+    - fi
+    - curl --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline"
+  except:
+    - pipelines
 
 job:
   except:
-  - schedules
+    - schedules
   script:
-  - apk update
-  - apk --no-cache add openssh bash git curl
-  - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh
-  - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
-  - 'which ssh-agent || ( apk add --update openssh )'
-  - eval $(ssh-agent -s)
-  - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
-  - git config --global user.name "redpeacock78"
-  - git config --global user.email "scarletpeacock78@gmail.com"
-  - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
-  - git checkout ${CI_COMMIT_REF_NAME}
-  - git pull
-  - mkdir -p public
-  - curl -sL https://kyotoartnews.page.link/all > public/all.xml
-  - curl -sL https://kyotoartnews.page.link/life > public/life.xml
-  - curl -sL https://kyotoartnews.page.link/teach > public/teach.xml
-  - curl -sL https://kyotoartnews.page.link/event > public/event.xml
-  - curl -sL https://kyotoartnews.page.link/emergency > public/emergency.xml
-  - curl -sL https://kyotoartnews.page.link/scholarship > public/scholarship.xml
-  - git add public/*.xml
-  - git status
-  - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
-  - if [[ -z ${ret} ]]; then
-  -   git commit -m '[ci skip] Push by GitLab runner.'
-  -   git push
-  - fi
+    - apk update
+    - apk --no-cache add openssh bash git curl
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
+    - 'which ssh-agent || ( apk add --update openssh )'
+    - eval $(ssh-agent -s)
+    - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
+    - git config --global user.name "redpeacock78"
+    - git config --global user.email "scarletpeacock78@gmail.com"
+    - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
+    - git checkout ${CI_COMMIT_REF_NAME}
+    - git pull
+    - mkdir -p public
+    - curl -sL https://kyotoartnews.page.link/all > public/all.xml
+    - curl -sL https://kyotoartnews.page.link/life > public/life.xml
+    - curl -sL https://kyotoartnews.page.link/teach > public/teach.xml
+    - curl -sL https://kyotoartnews.page.link/event > public/event.xml
+    - curl -sL https://kyotoartnews.page.link/emergency > public/emergency.xml
+    - curl -sL https://kyotoartnews.page.link/scholarship > public/scholarship.xml
+    - git add public/*.xml
+    - git status
+    - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
+    - if [[ -z ${ret} ]]; then
+    -   git commit -m '[ci skip] Push by GitLab runner.'
+    -   git push
+    - fi
+    - curl --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline"
+  except:
+    - pipelines
 
 pages:
+  only:
+    variables:
+      - $variables[TRIGERRED_JOB] == "pages"
   stage: deploy
   script:
-  - echo 'Nothing to do...'
+    - echo 'Nothing to do...'
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master
