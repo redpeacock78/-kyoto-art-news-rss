@@ -34,8 +34,6 @@ job:on-schedule:
     -   git push
     - fi
     - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline" > /dev/null
-  except:
-    - pipelines
 
 job:
   except:
@@ -76,7 +74,8 @@ pages:
     variables:
       - $variables[TRIGERRED_JOB] == "pages"
   except:
-    - pipelines
+    - schedules
+    - pushes
   stage: deploy
   script:
     - echo 'Nothing to do...'
