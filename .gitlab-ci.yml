@@ -31,7 +31,7 @@ job:on-schedule:
     -   git commit -m '[ci skip] Push by GitLab runner.'
     -   git push
     - fi
-    - curl --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline"
+    - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline"
   except:
     - pipelines
 
@@ -66,7 +66,7 @@ job:
     -   git commit -m '[ci skip] Push by GitLab runner.'
     -   git push
     - fi
-    - curl --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline"
+    - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline"
   except:
     - pipelines
 
