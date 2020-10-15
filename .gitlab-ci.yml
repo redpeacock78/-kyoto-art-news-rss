@@ -7,7 +7,7 @@ job:on-schedule:
     - pipelines
   script:
     - apk update
-    - apk --no-cache add openssh bash git curl
+    - apk --no-cache add openssh bash git curl sed
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -19,12 +19,42 @@ job:on-schedule:
     - git checkout ${CI_COMMIT_REF_NAME}
     - git pull
     - mkdir -p public
-    - curl -sL https://kyotoartnews.page.link/all > public/all.xml
-    - curl -sL https://kyotoartnews.page.link/life > public/life.xml
-    - curl -sL https://kyotoartnews.page.link/teach > public/teach.xml
-    - curl -sL https://kyotoartnews.page.link/event > public/event.xml
-    - curl -sL https://kyotoartnews.page.link/emergency > public/emergency.xml
-    - curl -sL https://kyotoartnews.page.link/scholarship > public/scholarship.xml
+    - all=$(curl -sL https://kyotoartnews.page.link/all | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${all} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${all} > public/all.xml
+    - fi
+    - life=$(curl -sL https://kyotoartnews.page.link/life | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${life} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${life} > public/life.xml
+    - fi
+    - teach=$(curl -sL https://kyotoartnews.page.link/teach | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${teach} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${teach} > public/teach.xml
+    - fi
+    - event=$(curl -sL https://kyotoartnews.page.link/event | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${event} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${event} > public/event.xml
+    - fi
+    - emergency=$(curl -sL https://kyotoartnews.page.link/emergency | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${emergency} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${emergency} > public/emergency.xml
+    - fi
+    - scholarship=$(curl -sL https://kyotoartnews.page.link/scholarship | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${scholarship} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${scholarship} > public/scholarship.xml
+    - fi
     - git add public/*.xml
     - git status
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
@@ -40,7 +70,7 @@ job:
     - pipelines
   script:
     - apk update
-    - apk --no-cache add openssh bash git curl
+    - apk --no-cache add openssh bash git curl sed
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -52,12 +82,42 @@ job:
     - git checkout ${CI_COMMIT_REF_NAME}
     - git pull
     - mkdir -p public
-    - curl -sL https://kyotoartnews.page.link/all > public/all.xml
-    - curl -sL https://kyotoartnews.page.link/life > public/life.xml
-    - curl -sL https://kyotoartnews.page.link/teach > public/teach.xml
-    - curl -sL https://kyotoartnews.page.link/event > public/event.xml
-    - curl -sL https://kyotoartnews.page.link/emergency > public/emergency.xml
-    - curl -sL https://kyotoartnews.page.link/scholarship > public/scholarship.xml
+    - all=$(curl -sL https://kyotoartnews.page.link/all | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${all} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${all} > public/all.xml
+    - fi
+    - life=$(curl -sL https://kyotoartnews.page.link/life | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${life} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${life} > public/life.xml
+    - fi
+    - teach=$(curl -sL https://kyotoartnews.page.link/teach | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${teach} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${teach} > public/teach.xml
+    - fi
+    - event=$(curl -sL https://kyotoartnews.page.link/event | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${event} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${event} > public/event.xml
+    - fi
+    - emergency=$(curl -sL https://kyotoartnews.page.link/emergency | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${emergency} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${emergency} > public/emergency.xml
+    - fi
+    - scholarship=$(curl -sL https://kyotoartnews.page.link/scholarship | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - if [[ -z ${scholarship} ]]; then
+    -   echo "Please wait a bit and try again."
+    - else
+    -   echo ${scholarship} > public/scholarship.xml
+    - fi
     - git add public/*.xml
     - git status
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
