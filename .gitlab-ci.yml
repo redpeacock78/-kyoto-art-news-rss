@@ -60,14 +60,14 @@ job:
     - git checkout "${CI_COMMIT_REF_NAME}"
     - git pull
     - mkdir -p public
-    - >-
-      bash -c "
-        feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}")
-        xmls=("public/all.xml" "public/life.xml" "public/teach.xml" "public/event.xml" "public/emergency.xml" "public/scholarship.xml")
-        for ((i=0; i<${#feeds[@]}; i++)); do
-          feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
-          '[[ -z "${feed}" ]] && echo "${xmls[i]}: There was no update" || echo "${feeds}" > "${xmls[i]}"'
-        done
+    - |-
+      bash -c " \
+        feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}") \
+        xmls=("public/all.xml" "public/life.xml" "public/teach.xml" "public/event.xml" "public/emergency.xml" "public/scholarship.xml") \
+        for ((i=0; i<${#feeds[@]}; i++)); do \
+          feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g") \
+          '[[ -z "${feed}" ]] && echo "${xmls[i]}: There was no update" || echo "${feeds}" > "${xmls[i]}"' \
+        done \
       "
     - git add public/*.xml
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
