@@ -36,7 +36,7 @@ job:on-schedule:
     - mkdir -p public
     - feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}")
     - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}")
-    - for (( i=0; i<${#feeds[@]}; i++ )); do
+    - for ((i=0; i<"${#feeds[@]}"; i++)); do
     -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
     -   '[[ -z "${feed}" ]] && : || echo "${feed}" > "${xmls[i]}"'
     - done
@@ -65,7 +65,7 @@ job:
     - mkdir -p public
     - feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}")
     - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}")
-    - for (( i=0; i<${#feeds[@]}; i++ )); do
+    - for ((i=0; i<"${#feeds[@]}"; i++)); do
     -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
     -   '[[ -z "${feed}" ]] && : || echo "${feed}" > "${xmls[i]}"'
     - done
