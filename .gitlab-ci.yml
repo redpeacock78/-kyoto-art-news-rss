@@ -1,67 +1,47 @@
 image: alpine:latest
 
+variables:
+  ALL_URL: "https://kyotoartnews.page.link/all"
+  LIFE_URL: "https://kyotoartnews.page.link/life"
+  TEACH_URL: "https://kyotoartnews.page.link/teach"
+  EVENT_URL: "https://kyotoartnews.page.link/event"
+  EMERGENCY_URL: "https://kyotoartnews.page.link/emergency"
+  SCHOLARSHIP_URL: "https://kyotoartnews.page.link/scholarship"
+
 job:on-schedule:
   only:
     - schedules
   except:
     - pipelines
   script:
-    - apk update
-    - apk --no-cache add openssh bash git curl sed
+    - apk update > /dev/null
+    - apk --no-cache add openssh bash git curl sed > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
-    - eval $(ssh-agent -s)
+    - eval $(ssh-agent -s) > /dev/null
     - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
     - git config --global user.name "redpeacock78"
-    - git config --global user.email "scarletpeacock78@gmail.com"
-    - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
-    - git checkout ${CI_COMMIT_REF_NAME}
+    - git config --global user.email "${GIT_EMAIL}"
+    - git remote set-url --push origin git@"${CI_SERVER_HOST}":"${CI_PROJECT_PATH}".git
+    - git checkout "${CI_COMMIT_REF_NAME}"
     - git pull
     - mkdir -p public
-    - all=$(curl -sL https://kyotoartnews.page.link/all | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${all}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${all}" > public/all.xml
-    - fi
-    - life=$(curl -sL https://kyotoartnews.page.link/life | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${life}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${life}" > public/life.xml
-    - fi
-    - teach=$(curl -sL https://kyotoartnews.page.link/teach | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${teach}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${teach}" > public/teach.xml
-    - fi
-    - event=$(curl -sL https://kyotoartnews.page.link/event | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${event}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${event}" > public/event.xml
-    - fi
-    - emergency=$(curl -sL https://kyotoartnews.page.link/emergency | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${emergency}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${emergency}" > public/emergency.xml
-    - fi
-    - scholarship=$(curl -sL https://kyotoartnews.page.link/scholarship | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${scholarship}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${scholarship}" > public/scholarship.xml
-    - fi
+    - all=$(curl -sL "${ALL_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${all}" ]] && : || echo "${all}" > public/all.xml'
+    - life=$(curl -sL "${LIFE_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${life}" ]] && : || echo "${life}" > public/life.xml'
+    - teach=$(curl -sL "${TEACH_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${teach}" ]] && : || echo "${teach}" > public/teach.xml'
+    - event=$(curl -sL "${EVENT_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${event}" ]] && : || echo "${event}" > public/event.xml'
+    - emergency=$(curl -sL "${EMERGENCY_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${emergency}" ]] && : || echo "${emergency}" > public/emergency.xml'
+    - scholarship=$(curl -sL "${SCHOLARSHIP_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${scholarship}" ]] && : || echo "${scholarship}" > public/scholarship.xml'
     - git add public/*.xml
-    - git status
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
-    - if [[ -z ${ret} ]]; then
-    -   git commit -m '[ci skip] Push by GitLab runner.'
-    -   git push
-    - fi
+    - '[[ -z "${ret}" ]] && git commit -m "[ci skip] Push by GitLab runner." && git push'
     - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline" > /dev/null
 
 job:
@@ -69,62 +49,35 @@ job:
     - schedules
     - pipelines
   script:
-    - apk update
-    - apk --no-cache add openssh bash git curl sed
+    - apk update > /dev/null
+    - apk --no-cache add openssh bash git curl sed > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
-    - eval $(ssh-agent -s)
+    - eval $(ssh-agent -s) > /dev/null
     - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
     - git config --global user.name "redpeacock78"
-    - git config --global user.email "scarletpeacock78@gmail.com"
+    - git config --global user.email "${GIT_EMAIL}"
     - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
     - git checkout ${CI_COMMIT_REF_NAME}
     - git pull
     - mkdir -p public
-    - all=$(curl -sL https://kyotoartnews.page.link/all | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${all}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${all}" > public/all.xml
-    - fi
-    - life=$(curl -sL https://kyotoartnews.page.link/life | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${life}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${life}" > public/life.xml
-    - fi
-    - teach=$(curl -sL https://kyotoartnews.page.link/teach | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${teach}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${teach}" > public/teach.xml
-    - fi
-    - event=$(curl -sL https://kyotoartnews.page.link/event | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${event}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${event}" > public/event.xml
-    - fi
-    - emergency=$(curl -sL https://kyotoartnews.page.link/emergency | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${emergency}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${emergency}" > public/emergency.xml
-    - fi
-    - scholarship=$(curl -sL https://kyotoartnews.page.link/scholarship | sed -z "/<html>/s/.*\\n//g")
-    - if [[ -z "${scholarship}" ]]; then
-    -   echo "Please wait a bit and try again."
-    - else
-    -   echo "${scholarship}" > public/scholarship.xml
-    - fi
+    - all=$(curl -sL "${ALL_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${all}" ]] && : || echo "${all}" > public/all.xml'
+    - life=$(curl -sL "${LIFE_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${life}" ]] && : || echo "${life}" > public/life.xml'
+    - teach=$(curl -sL "${TEACH_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${teach}" ]] && : || echo "${teach}" > public/teach.xml'
+    - event=$(curl -sL "${EVENT_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${event}" ]] && : || echo "${event}" > public/event.xml'
+    - emergency=$(curl -sL "${EMERGENCY_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${emergency}" ]] && : || echo "${emergency}" > public/emergency.xml'
+    - scholarship=$(curl -sL "${SCHOLARSHIP_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - '[[ -z "${scholarship}" ]] && : || echo "${scholarship}" > public/scholarship.xml'
     - git add public/*.xml
     - git status
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
-    - if [[ -z ${ret} ]]; then
-    -   git commit -m '[ci skip] Push by GitLab runner.'
-    -   git push
-    - fi
+    - '[[ -z "${ret}" ]] && git commit -m "[ci skip] Push by GitLab runner." && git push'
     - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline" > /dev/null
 
 pages:
