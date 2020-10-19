@@ -19,37 +19,37 @@ job:on-schedule:
     - git checkout ${CI_COMMIT_REF_NAME}
     - git pull
     - mkdir -p public
-    - all=$(curl -sL https://kyotoartnews.page.link/all | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - all=$(curl -sL https://kyotoartnews.page.link/all | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${all}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${all}" > public/all.xml
     - fi
-    - life=$(curl -sL https://kyotoartnews.page.link/life | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - life=$(curl -sL https://kyotoartnews.page.link/life | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${life}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${life}" > public/life.xml
     - fi
-    - teach=$(curl -sL https://kyotoartnews.page.link/teach | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - teach=$(curl -sL https://kyotoartnews.page.link/teach | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${teach}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${teach}" > public/teach.xml
     - fi
-    - event=$(curl -sL https://kyotoartnews.page.link/event | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - event=$(curl -sL https://kyotoartnews.page.link/event | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${event}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${event}" > public/event.xml
     - fi
-    - emergency=$(curl -sL https://kyotoartnews.page.link/emergency | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - emergency=$(curl -sL https://kyotoartnews.page.link/emergency | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${emergency}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${emergency}" > public/emergency.xml
     - fi
-    - scholarship=$(curl -sL https://kyotoartnews.page.link/scholarship | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - scholarship=$(curl -sL https://kyotoartnews.page.link/scholarship | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${scholarship}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
@@ -82,37 +82,37 @@ job:
     - git checkout ${CI_COMMIT_REF_NAME}
     - git pull
     - mkdir -p public
-    - all=$(curl -sL https://kyotoartnews.page.link/all | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - all=$(curl -sL https://kyotoartnews.page.link/all | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${all}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${all}" > public/all.xml
     - fi
-    - life=$(curl -sL https://kyotoartnews.page.link/life | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - life=$(curl -sL https://kyotoartnews.page.link/life | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${life}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${life}" > public/life.xml
     - fi
-    - teach=$(curl -sL https://kyotoartnews.page.link/teach | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - teach=$(curl -sL https://kyotoartnews.page.link/teach | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${teach}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${teach}" > public/teach.xml
     - fi
-    - event=$(curl -sL https://kyotoartnews.page.link/event | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - event=$(curl -sL https://kyotoartnews.page.link/event | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${event}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${event}" > public/event.xml
     - fi
-    - emergency=$(curl -sL https://kyotoartnews.page.link/emergency | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - emergency=$(curl -sL https://kyotoartnews.page.link/emergency | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${emergency}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
     -   echo "${emergency}" > public/emergency.xml
     - fi
-    - scholarship=$(curl -sL https://kyotoartnews.page.link/scholarship | sed -z "/Please wait a bit and try again./s/.*\\n//g")
+    - scholarship=$(curl -sL https://kyotoartnews.page.link/scholarship | sed -z "/<html>/s/.*\\n//g")
     - if [[ -z "${scholarship}" ]]; then
     -   echo "Please wait a bit and try again."
     - else
