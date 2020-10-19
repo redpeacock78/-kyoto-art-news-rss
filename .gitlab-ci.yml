@@ -8,6 +8,12 @@ variables:
   EVENT_URL: "https://kyotoartnews.page.link/event"
   EMERGENCY_URL: "https://kyotoartnews.page.link/emergency"
   SCHOLARSHIP_URL: "https://kyotoartnews.page.link/scholarship"
+  ALL_XML: "public/all.xml"
+  LIFE_XML: "public/life.xml"
+  TEACH_XML: "public/teach.xml"
+  EVENT_XML: "public/event.xml"
+  EMERGENCY_XML: "public/emergency.xml"
+  SCHOLARSHIP_XML: "public/scholarship.xml"
 
 job:on-schedule:
   only:
@@ -29,8 +35,8 @@ job:on-schedule:
     - git pull
     - mkdir -p public
     - feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}")
-    - xmls=("public/all.xml" "public/life.xml" "public/teach.xml" "public/event.xml" "public/emergency.xml" "public/scholarship.xml")
-    - for ((i=0; i<${#feeds[@]}; i++)); do
+    - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}")
+    - for (( i=0; i<${#feeds[@]}; i++ )); do
     -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
     -   '[[ -z "${feed}" ]] && : || echo "${feed}" > "${xmls[i]}"'
     - done
@@ -57,10 +63,10 @@ job:
     - git checkout "${CI_COMMIT_REF_NAME}"
     - git pull
     - mkdir -p public
-    - feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}") && \
-    - xmls=("public/all.xml" "public/life.xml" "public/teach.xml" "public/event.xml" "public/emergency.xml" "public/scholarship.xml") && \
+    - feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}")
+    - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}")
     - for (( i=0; i<${#feeds[@]}; i++ )); do
-    -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g") && \
+    -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
     -   '[[ -z "${feed}" ]] && : || echo "${feed}" > "${xmls[i]}"'
     - done
     - git add public/*.xml
