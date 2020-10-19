@@ -1,6 +1,7 @@
 image: alpine:latest
 
 variables:
+  TAG: "<html>"
   ALL_URL: "https://kyotoartnews.page.link/all"
   LIFE_URL: "https://kyotoartnews.page.link/life"
   TEACH_URL: "https://kyotoartnews.page.link/teach"
@@ -27,17 +28,17 @@ job:on-schedule:
     - git checkout "${CI_COMMIT_REF_NAME}"
     - git pull
     - mkdir -p public
-    - all=$(curl -sL "${ALL_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - all=$(curl -sL "${ALL_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${all}" ]] && : || echo "${all}" > public/all.xml'
-    - life=$(curl -sL "${LIFE_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - life=$(curl -sL "${LIFE_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${life}" ]] && : || echo "${life}" > public/life.xml'
-    - teach=$(curl -sL "${TEACH_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - teach=$(curl -sL "${TEACH_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${teach}" ]] && : || echo "${teach}" > public/teach.xml'
-    - event=$(curl -sL "${EVENT_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - event=$(curl -sL "${EVENT_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${event}" ]] && : || echo "${event}" > public/event.xml'
-    - emergency=$(curl -sL "${EMERGENCY_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - emergency=$(curl -sL "${EMERGENCY_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${emergency}" ]] && : || echo "${emergency}" > public/emergency.xml'
-    - scholarship=$(curl -sL "${SCHOLARSHIP_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - scholarship=$(curl -sL "${SCHOLARSHIP_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${scholarship}" ]] && : || echo "${scholarship}" > public/scholarship.xml'
     - git add public/*.xml
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
@@ -58,24 +59,23 @@ job:
     - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
     - git config --global user.name "redpeacock78"
     - git config --global user.email "${GIT_EMAIL}"
-    - git remote set-url --push origin git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git
-    - git checkout ${CI_COMMIT_REF_NAME}
+    - git remote set-url --push origin git@"${CI_SERVER_HOST}":"${CI_PROJECT_PATH}".git
+    - git checkout "${CI_COMMIT_REF_NAME}"
     - git pull
     - mkdir -p public
-    - all=$(curl -sL "${ALL_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - all=$(curl -sL "${ALL_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${all}" ]] && : || echo "${all}" > public/all.xml'
-    - life=$(curl -sL "${LIFE_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - life=$(curl -sL "${LIFE_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${life}" ]] && : || echo "${life}" > public/life.xml'
-    - teach=$(curl -sL "${TEACH_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - teach=$(curl -sL "${TEACH_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${teach}" ]] && : || echo "${teach}" > public/teach.xml'
-    - event=$(curl -sL "${EVENT_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - event=$(curl -sL "${EVENT_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${event}" ]] && : || echo "${event}" > public/event.xml'
-    - emergency=$(curl -sL "${EMERGENCY_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - emergency=$(curl -sL "${EMERGENCY_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${emergency}" ]] && : || echo "${emergency}" > public/emergency.xml'
-    - scholarship=$(curl -sL "${SCHOLARSHIP_URL}" | sed -z "/<html>/s/.*\\n//g")
+    - scholarship=$(curl -sL "${SCHOLARSHIP_URL}" | sed -z "/${TAG}/s/.*\\n//g")
     - '[[ -z "${scholarship}" ]] && : || echo "${scholarship}" > public/scholarship.xml'
     - git add public/*.xml
-    - git status
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
     - '[[ -z "${ret}" ]] && git commit -m "[ci skip] Push by GitLab runner." && git push'
     - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline" > /dev/null
