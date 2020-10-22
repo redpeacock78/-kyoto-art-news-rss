@@ -41,13 +41,12 @@ Document: <a href="https://kyoto-art-news.tk/index.html">English Version</a> | �
 <img src="https://img.shields.io/github/languages/code-size/redpeacock78/kyoto-art_news" alt="GitHub code size in bytes">
 <a href="https://github.com/google/clasp"><img src="https://img.shields.io/badge/built%20with-clasp-4285f4.svg" alt="clasp"></a><br><a href="https://circleci.com/gh/redpeacock78/kyoto-art_news"><img src="https://img.shields.io/circleci/build/github/redpeacock78/kyoto-art_news" alt="CircleCI"></a>
 <a href="https://gitlab.com/redpeacock78/kyoto-art-news-rss/-/commits/master"><img src="https://gitlab.com/redpeacock78/kyoto-art-news-rss/badges/master/pipeline.svg" alt="Gitlab CI"></a>
-<a href="http://www.moondakota.com/feed/index_u.php"><img src="https://img.shields.io/website?down_message=down&label=moondakota&=plastic&up_message=online&url=http%3A%2F%2Fwww.moondakota.com%2Ffeed%2Findex_u.php" alt="Website"></a></p>
 <hr>
 <h3 id="📢_全カテゴリーの最新リアルタイムニュース20件" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">📢 全カテゴリーの最新リアルタイムニュース20件<a href="#📢_全カテゴリーの最新リアルタイムニュース20件" title="📢_全カテゴリーの最新リアルタイムニュース20件"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
 <table>
 <thead>
 <tr>
-<th align="left"><script type="text/javascript" src="http://www.moondakota.com/feed/generate.php?src=https%3A%2F%2Fkyoto-art-news.tk%2Fall.xml&chan=n&num=0&tit=0&desc=0&date=y&targ=y&oe=UTF-8"></script></th>
+<th align="left"><div id="rss"></div></th>
 </tr>
 </thead>
 </table>
@@ -95,4 +94,46 @@ Document: <a href="https://kyoto-art-news.tk/index.html">English Version</a> | �
 		  });
 		  $(document).on("mouseout", "h1,h2,h3,h4,h5", function(e) {
 		    $(e.currentTarget).find(".fa-link").hide();
-		  });</script></html>
+		  });</script><script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+		  <script>
+		  $.ajax({
+			  url: 'https://kyoto-art-news.tk/all.xml',
+			  type: 'get',
+			  dataType: 'xml',
+			  timeout: 5000,
+			  success: function(xml, status) {
+				  if (status === 'success') {
+					  var row = 0;
+					  var data = [];
+					  var nodeName;
+					  $(xml).find('item').each(function() {
+						  data[row] = {};
+						  $(this).children().each(function() {
+							  nodeName = $(this)[0].nodeName;
+							  data[row][nodeName] = {};
+							  attributes = $(this)[0].attributes;
+							  for (var i in attributes) {
+								  data[row][nodeName][attributes[i].name] = attributes[i].value; // 属性名 = 値
+							  }
+							  data[row][nodeName]['text'] = $(this).text();
+						  });
+						  row++;
+					  });
+					  $('#rss').wrapInner('<ul></ul>');
+					  for (i in data) {
+						function formatDate (date, format) {
+							format = format.replace(/yyyy/g, date.getFullYear());
+							format = format.replace(/MM/g, ('0' + (date.getMonth() + 1)).slice(-2));
+							format = format.replace(/dd/g, ('0' + date.getDate()).slice(-2));
+							format = format.replace(/HH/g, ('0' + date.getHours()).slice(-2));
+							format = format.replace(/mm/g, ('0' + date.getMinutes()).slice(-2));
+							format = format.replace(/ss/g, ('0' + date.getSeconds()).slice(-2));
+							format = format.replace(/SSS/g, ('00' + date.getMilliseconds()).slice(-3));
+							return format;
+						};
+						  $('#rss').find('ul').append('<li>' + formatDate(new Date(data[i].pubDate.text), 'yyyy/MM/dd HH:mm') + ' <a href="' + data[i].link.text + '">' + data[i].title.text + '</a></li>');
+					  }
+				  }
+			  }  
+		  });
+		  </script></html>
