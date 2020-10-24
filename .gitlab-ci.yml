@@ -1,4 +1,4 @@
-image: bashell/alpine-bash:latest
+image: redpeacock78/alpine-bash-jst:latest
 
 variables:
   TAG: "<html>"
