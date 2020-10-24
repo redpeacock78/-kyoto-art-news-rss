@@ -81,6 +81,7 @@ pages:
   except:
     - schedules
     - pushes
+    - web
   stage: deploy
   script:
     - echo 'Nothing to do...'
