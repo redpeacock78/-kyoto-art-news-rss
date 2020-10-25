@@ -21,8 +21,7 @@ job:on-schedule:
   except:
     - pipelines
   script:
-    - apk update > /dev/null
-    - apk --no-cache add openssh bash git curl sed > /dev/null
+    - apk --update --no-cache add openssh bash git curl sed > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -51,8 +50,7 @@ job:
     - schedules
     - pipelines
   script:
-    - apk update > /dev/null
-    - apk --no-cache add openssh bash git curl sed > /dev/null
+    - apk --update --no-cache add openssh bash git curl sed > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
