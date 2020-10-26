@@ -29,8 +29,8 @@ job:on-schedule:
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
     - eval $(ssh-agent -s) > /dev/null
     - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
-    - git config --global user.name "redpeacock78"
-    - git config --global user.email "${GIT_EMAIL}"
+    - git config --global user.name "rss_update_bot"
+    - git config --global user.email "rss_update@example.com"
     - git remote set-url --push origin git@"${CI_SERVER_HOST}":"${CI_PROJECT_PATH}".git
     - git checkout "${CI_COMMIT_REF_NAME}"
     - git pull
@@ -58,8 +58,8 @@ job:
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
     - eval $(ssh-agent -s) > /dev/null
     - bash -c "ssh-add <(echo '${SSH_PRIVATE_KEY}' | base64 -d) > /dev/null"
-    - git config --global user.name "redpeacock78"
-    - git config --global user.email "${GIT_EMAIL}"
+    - git config --global user.name "rss_update_bot"
+    - git config --global user.email "rss_update@example.com"
     - git remote set-url --push origin git@"${CI_SERVER_HOST}":"${CI_PROJECT_PATH}".git
     - git checkout "${CI_COMMIT_REF_NAME}"
     - git pull
