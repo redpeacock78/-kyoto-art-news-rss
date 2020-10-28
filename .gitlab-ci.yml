@@ -16,7 +16,7 @@ variables:
   CAREERDESIGN_XML: "public/careerdesign.xml"
 
 job:on-schedule:
-  image: redpeacock78/alpine-bash-jst:latest
+  image: registry.gitlab.com/redpeacock78/alpine-bash-jst:master
   only:
     - schedules
   except:
@@ -47,7 +47,7 @@ job:on-schedule:
     - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline" > /dev/null
 
 job:
-  image: redpeacock78/alpine-bash-jst:latest
+  image: registry.gitlab.com/redpeacock78/alpine-bash-jst:master
   except:
     - schedules
     - pipelines
