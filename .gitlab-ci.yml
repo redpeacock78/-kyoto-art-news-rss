@@ -23,7 +23,7 @@ job:on-schedule:
   except:
     - pipelines
   script:
-    - apk --update --no-cache add openssh bash git curl sed > /dev/null
+    - apk --update --no-cache add openssh bash git curl sed tidyhtml > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -39,7 +39,7 @@ job:on-schedule:
     - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}" "${CAREERDESIGN_XML}")
     - for ((i=0; i<"${#feeds[@]}"; i++)); do
     -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
-    -   '[[ -z "${feed}" ]] && : || echo "${feed}" > "${xmls[i]}"'
+    -   '[[ -z "${feed}" ]] && : || tidy --wrap 0 --indent-cdata true -xml -utf8 -i -o "${xmls[i]}" <(echo "${feed}") 2>/dev/null'
     - done
     - git add public/*.xml
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
@@ -52,7 +52,7 @@ job:
     - schedules
     - pipelines
   script:
-    - apk --update --no-cache add openssh bash git curl sed > /dev/null
+    - apk --update --no-cache add openssh bash git curl sed tidyhtml > /dev/null
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
     - ssh-keyscan -H "${CI_SERVER_HOST}" >> ~/.ssh/known_hosts
@@ -68,7 +68,7 @@ job:
     - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}" "${CAREERDESIGN_XML}")
     - for ((i=0; i<"${#feeds[@]}"; i++)); do
     -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
-    -   '[[ -z "${feed}" ]] && : || echo "${feed}" > "${xmls[i]}"'
+    -   '[[ -z "${feed}" ]] && : || tidy --wrap 0 --indent-cdata true -xml -utf8 -i -o "${xmls[i]}" <(echo "${feed}") 2>/dev/null'
     - done
     - git add public/*.xml
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
