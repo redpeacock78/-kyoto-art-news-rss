@@ -219,7 +219,7 @@ Document: <a href="../index.html">English Version</a> | <a href="../ja/index.htm
 							format = format.replace(/SSS/g, ('00' + date.getMilliseconds()).slice(-3));
 							return format;
 						};
-						  $('#rss').find('ul').append('<li>' + formatDate(new Date(data[i].pubDate.text), 'yyyy/MM/dd HH:mm') + ' <a href="' + data[i].link.text + '">' + data[i].title.text + '</a></li>');
+						  $('#rss').find('ul').append('<li>' + formatDate(new Date(data[i].pubDate.text), 'yyyy/MM/dd HH:mm') + ' <a href="' + data[i].link.text + '" target="_blank" rel="noopener noreferrer">' + data[i].title.text + '</a></li>');
 					  }
 				  }
 			  }  
