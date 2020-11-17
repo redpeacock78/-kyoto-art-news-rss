@@ -1,9 +1,148 @@
-<HTML>
-  <HEAD>
-    <TITLE>Internal Server Error</TITLE>
-  </HEAD>
-  <BODY BGCOLOR="#FFFFFF" TEXT="#000000">
-    <H1>Internal Server Error</H1>
-    <H2>Error 500</H2>
-  </BODY>
-</HTML>
+<rss version="2.0">
+  <channel>
+    <title>お知らせ | 京都造形芸術大学 在学生専用サイト</title>
+    <description></description>
+    <link>https://www.kyoto-art.ac.jp/student/</link>
+    <language>ja</language>
+    <item>
+      <title>セミナー・講座情報:【4年生・M2】11/30(月)開催、ハローワークマッチングイベント(求人閲覧会)のお知らせ</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/201117-5235/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Tue Nov 17 2020 20:34:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>新型コロナウイルス感染拡大防止に最大限注意を払ってください</title>
+      <link>https://www.kyoto-art.ac.jp/student/life/news/201116-5227/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Mon Nov 16 2020 09:50:19 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>求人:【4年生・M2】11/13配信_CDC職員おすすめ求人_(広告・ゲーム・テキスタイル・障がい者対象求人)</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/201114-5232/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Sat Nov 14 2020 08:59:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>セミナー・講座情報:【3年・M1生】11/24-12/9業界研究セミナー開催のお知らせ</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/201113-5231/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri Nov 13 2020 20:29:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>セミナー・講座情報:【3年・M1生】11/17 エントリーシート作成講座B開催案内</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/201113-5230/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri Nov 13 2020 20:24:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>【学園生割引あり！】実力派ダンサーが集う注目作を春秋座で！　森山開次(演出・振付・出演) ダンス作品『星の王子さま―サン＝テグジュペリからの手紙』</title>
+      <link>https://www.kyoto-art.ac.jp/student/event/news/201112-5220/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Thu Nov 12 2020 11:50:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>セミナー・講座情報:【3年・M1生】11/27 美大・芸大生（2022卒）のための業界研究イベント開催案内［WEB］</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/201111-5217/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Wed Nov 11 2020 19:14:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>【締切間近！】福山市の商品デザインに関わってみませんか？（コンペ）</title>
+      <link>https://www.kyoto-art.ac.jp/student/event/news/201111-5210/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Wed Nov 11 2020 12:10:09 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>2020年度　定期健康診断を希望される方へ</title>
+      <link>https://www.kyoto-art.ac.jp/student/life/news/201110-5205/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Tue Nov 10 2020 14:30:19 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>【学外奨学金（追加募集）】貸与型：京都教弘貸与奨学金（11月30日締切）</title>
+      <link>https://www.kyoto-art.ac.jp/student/scholarship/news/201109-5192/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Mon Nov 09 2020 16:50:54 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>【学外奨学金（追加募集）】貸与型：清流の国ぎふ大学生等奨学金（11月20日締切）</title>
+      <link>https://www.kyoto-art.ac.jp/student/scholarship/news/201109-5201/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Mon Nov 09 2020 16:50:54 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>【助成金情報（追加募集）】現代美術文化振興財団　陶芸家支援助成金（11月20日締切）</title>
+      <link>https://www.kyoto-art.ac.jp/student/scholarship/news/201109-5194/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Mon Nov 09 2020 16:50:54 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>HOP 2020 ― 京都芸術大学大学院 修士1年生 作品展　開催のお知らせ</title>
+      <link>https://www.kyoto-art.ac.jp/student/event/news/201109-5197/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Mon Nov 09 2020 14:55:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>セミナー・講座情報 【3年生・M1】～11/30配信期間延長！秋冬インターンシップガイダンス動画</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/201109-5195/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Mon Nov 09 2020 13:59:09 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>2020年度生対象：【お知らせ】芸術教養科目　後期後半科目の履修削除・後期前半科目の成績開示について</title>
+      <link>https://www.kyoto-art.ac.jp/student/teaching/news/201106-5172/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri Nov 06 2020 18:54:46 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>インターン:【3年生・M1】今週のおすすめインターン・イベント情報　11月6日(金)</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/201106-5190/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri Nov 06 2020 18:44:09 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>「これからのマスクを考える」アイデアコンペディション開催！</title>
+      <link>https://www.kyoto-art.ac.jp/student/event/news/201106-5189/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri Nov 06 2020 18:20:09 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>【留学生対象】就活相談会＆プチセミナー開催のお知らせ</title>
+      <link>https://www.kyoto-art.ac.jp/student/life/news/201106-5188/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri Nov 06 2020 14:50:20 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>冬を迎える前に感染対策の点検を</title>
+      <link>https://www.kyoto-art.ac.jp/student/life/news/201106-5181/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri Nov 06 2020 10:10:19 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>インフルエンザ予防接種実施のお知らせ（再掲）</title>
+      <link>https://www.kyoto-art.ac.jp/student/life/news/201106-5179/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri Nov 06 2020 10:05:20 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+  </channel>
+</rss>
