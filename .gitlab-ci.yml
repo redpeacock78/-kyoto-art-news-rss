@@ -1,7 +1,7 @@
 image: registry.gitlab.com/redpeacock78/alpine-bash-jst:master
 
 variables:
-  TAG: "<html>"
+  TAG: "<[Hh][Tt][Mm][Ll]>"
   ALL_URL: "https://kyotoartnews.page.link/all"
   LIFE_URL: "https://kyotoartnews.page.link/life"
   TEACH_URL: "https://kyotoartnews.page.link/teach"
@@ -38,7 +38,7 @@ job:on-schedule:
     - feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}" "${CAREERDESIGN_URL}")
     - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}" "${CAREERDESIGN_XML}")
     - for ((i=0; i<"${#feeds[@]}"; i++)); do
-    -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//ig")
+    -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
     -   '[[ -z "${feed}" ]] && : || tidy --wrap 0 --indent-cdata true -xml -utf8 -i -o "${xmls[i]}" <(echo "${feed}") 2>/dev/null'
     - done
     - git add public/*.xml
@@ -67,7 +67,7 @@ job:
     - feeds=("${ALL_URL}" "${LIFE_URL}" "${TEACH_URL}" "${EVENT_URL}" "${EMERGENCY_URL}" "${SCHOLARSHIP_URL}" "${CAREERDESIGN_URL}")
     - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}" "${CAREERDESIGN_XML}")
     - for ((i=0; i<"${#feeds[@]}"; i++)); do
-    -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//ig")
+    -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
     -   '[[ -z "${feed}" ]] && : || tidy --wrap 0 --indent-cdata true -xml -utf8 -i -o "${xmls[i]}" <(echo "${feed}") 2>/dev/null'
     - done
     - git add public/*.xml
