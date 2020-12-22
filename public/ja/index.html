@@ -1,226 +1,359 @@
-<!DOCTYPE html><html><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-	  <!-- Global site tag (gtag.js) - Google Analytics -->
-	  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRJ5476T6T"></script>
-	  <script>
-	   window.dataLayer = window.dataLayer || [];
-	   function gtag(){dataLayer.push(arguments);}
-	   gtag('js', new Date());
-			 
-	   gtag('config', 'G-YRJ5476T6T');
-	  </script>
-      <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  <meta name="google-site-verification" content="4Aqtp4_-C7mBGIOSWleCfrJF4iqy1KkN_vddru_WR4I" />
-	  <!-- OGP Setting -->
-	  <meta property="og:title" content="Kyoto Art News RSS"/>
-	  <meta property="og:type" content="website"/>
-	  <meta property="og:url" content="https://kyoto-art-news.tk/ja/index.html"/>
-	  <meta property="og:image" content="https://imgur.com/837QB8e.png"/>
-	  <meta property="og:site_name" content="Kyoto Art News RSS"/>
-	  <meta property="og:description" content='This is for distribution of RSS feeds of "News Information" on the Kyoto University of Art and Design website for students only (Unofficial)'/>
-	  <!-- Twitter OGP Setting -->
-	  <meta name="twitter:card" content="summary"/>
-	  <meta name="twitter:site" content="@kazuki_199778"/>
-	  <meta name="twitter:player" content="@kazuki_199778"/>
-	  <meta name="twitter:tilte" content="Kyoto Art News RSS"/>
-	  <meta name="twitter:description" content='This is for distribution of RSS feeds of "News Information" on the Kyoto University of Art and Design website for students only (Unofficial)'/>
-	  <meta name="twitter:image" content="https://imgur.com/837QB8e.png"/>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai-sublime.min.css" integrity="sha256-kTdkFYZP3TqSvlJAUiZ6/s5L2xu4xsdU9eYMWsKOk74=" crossorigin="anonymous">
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css" integrity="sha256-HbgiGHMLxHZ3kkAiixyvnaaZFNjNWLYKD/QG6PWaQPc=" crossorigin="anonymous">
-			<link rel="stylesheet" href="/css/guest.bundle.css?v=0.13.0"><style type="text/css">
-      .markdown-body {
-			  box-sizing: border-box;
-			  min-width: 200px;
-			  max-width: 980px;
-			  margin: 0 auto;
-			  padding: 45px;
-			}
-			.markdown-body pre {
-			  background: #23241f;
-			}
-			.markdown-body strong,
-			.markdown-body h1,
-			.markdown-body h2,
-			.markdown-body h3,
-			.markdown-body h4,
-			.markdown-body h5 {
-			  font-weight: 700;
-			}
-			#rss {
-			  font-size: 16px;
-			  color:#333333;
-			  padding:5px;
-			}
-			#rss li {
-			  padding:5px;
-			  border-bottom:1px solid #84b2e0;
-			}
-			#rss li:first-child{
-			  border-top:0px;
-			}
-			#rss li:last-child{
-			  border-bottom:0px;
-			}
-			@media (max-width: 767px) {
-			  .markdown-body {
-			    padding: 15px;
-			  }
-			}</style><script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><title>📰 Kyoto Art News RSS</title></head><body><div class="markdown-body"><h2 id="📰_Kyoto_Art_News_RSS" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">📰 Kyoto Art News RSS<a href="#📰_Kyoto_Art_News_RSS" title="📰_Kyoto_Art_News_RSS"><i class="fas fa-link ml-1" style="display:none;"></i></a></h2>
-<div style="text-align: center;">
-Document: <a href="../index.html">English Version</a> | 日本語版 | <a href="../zh-cn/index.html">中文版</a>
-</div>
+<!DOCTYPE html>
+<html>
 
-<h3 id="🤔_これは何ですか?" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">🤔 これは何ですか?<a href="#🤔_これは何ですか?" title="🤔_これは何ですか?"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
-<p>これは<a href="https://www.kyoto-art.ac.jp/student/">京都造形芸術大学 在学生専用サイト</a>に配信されている「お知らせ情報」をRSSとして配信するためのものです。(非公式)  公式サイトにはRSSなどの配信サービスが無く、非常に不便だったので制作しました。<br>なお最新情報の反映にはサーバーに負荷を掛けないためにおよそ5分間隔でスクレイピングを行う関係上、情報が公開されてから最大5〜6分の遅延が発生する可能性があります。</p>
-<hr>
-<h3 id="💻_コードとサービスの状態" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">💻 コードとサービスの状態<a href="#💻_コードとサービスの状態" title="💻_コードとサービスの状態"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
-<p><a href="https://github.com/redpeacock78/kyoto-art_news/blob/master/LICENSE"><img src="https://img.shields.io/github/license/redpeacock78/kyoto-art_news" alt="GitHub"></a>
-<img src="https://img.shields.io/github/languages/count/redpeacock78/kyoto-art_news" alt="GitHub language count">
-<img src="https://img.shields.io/github/languages/top/redpeacock78/kyoto-art_news" alt="GitHub top language">
-<img src="https://img.shields.io/github/languages/code-size/redpeacock78/kyoto-art_news" alt="GitHub code size in bytes">
-<a href="https://github.com/google/clasp"><img src="https://img.shields.io/badge/built%20with-clasp-4285f4.svg" alt="clasp"></a>
-<a href="https://codeclimate.com/github/redpeacock78/kyoto-art_news/maintainability"><img src="https://api.codeclimate.com/v1/badges/d10bcde61c4f6ecf1740/maintainability" /></a>
-<br>
-<a href="https://circleci.com/gh/redpeacock78/kyoto-art_news"><img src="https://circleci.com/gh/redpeacock78/kyoto-art_news.svg?style=shield" alt="CircleCI"></a>
-<a href="https://github.com/redpeacock78/kyoto-art_news/actions?query=workflow%3A%22check+npm%22"><img src="https://github.com/redpeacock78/kyoto-art_news/workflows/check%20npm/badge.svg?branch=master"></a>
-<a href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror/commits/master"><img src="https://gitlab.com/redpeacock78/kyoto-art-news-rss/badges/master/pipeline.svg" alt="Gitlab CI"></a>
-<a href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror/tags"><img src="https://img.shields.io/github/v/tag/redpeacock78/kyoto-art-news-rss-mirror?label=RSS%20Update" alt="RSS Update"></a>
-<hr>
-<h3 id="📢_全カテゴリーの最新リアルタイムニュース20件" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">📢 全カテゴリーの最新リアルタイムニュース20件<a href="#📢_全カテゴリーの最新リアルタイムニュース20件" title="📢_全カテゴリーの最新リアルタイムニュース20件"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
-<table>
-<thead>
-<tr>
-<th align="left"><div id="rss"></div></th>
-</tr>
-</thead>
-</table>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YRJ5476T6T"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-<hr>
-<h3 id="🛠_使い方" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">🛠 使い方<a href="#🛠_使い方" title="🛠_使い方"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
-<ul>
-<li><h4 id="⛓_URLs" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">⛓ URLs<a href="#⛓_URLs" title="⛓_URLs"><i class="fas fa-link ml-1" style="display:none;"></i></a></h4>
-<p>以下のURLをRSSリーダーに登録することで、それぞれのURLに対応した情報を適宜更新・取得することができます。(ミラーサイトも比較的安定していますので、ご利用をお勧めします。)</p>
-<ul>
-<li><strong>🌐 総合情報</strong><br><a href="https://kyotoartnews.page.link/all">https://kyotoartnews.page.link/all</a><br>ミラー: <a href="https://kyoto-art-news.tk/all.xml">https://kyoto-art-news.tk/all.xml</a>  </li>
-<li><strong>🏠 生活情報</strong><br><a href="https://kyotoartnews.page.link/life">https://kyotoartnews.page.link/life</a><br>ミラー: <a href="https://kyoto-art-news.tk/life.xml">https://kyoto-art-news.tk/life.xml</a>  </li>
-<li><strong>✏ 学習情報</strong><br><a href="https://kyotoartnews.page.link/teach">https://kyotoartnews.page.link/teach</a><br>ミラー: <a href="https://kyoto-art-news.tk/teach.xml">https://kyoto-art-news.tk/teach.xml</a>  </li>
-<li><strong>🎄 イベント・プロジェクト情報</strong><br><a href="https://kyotoartnews.page.link/event">https://kyotoartnews.page.link/event</a><br>ミラー: <a href="https://kyoto-art-news.tk/event.xml">https://kyoto-art-news.tk/event.xml</a>  </li>
-<li><strong>🚨 緊急情報</strong><br><a href="https://kyotoartnews.page.link/emergency">https://kyotoartnews.page.link/emergency</a><br>ミラー: <a href="https://kyoto-art-news.tk/emergency.xml">https://kyoto-art-news.tk/emergency.xml</a>  </li>
-<li><strong>💰 奨学金情報</strong><br><a href="https://kyotoartnews.page.link/scholarship">https://kyotoartnews.page.link/scholarship</a><br>ミラー: <a href="https://kyoto-art-news.tk/scholarship.xml">https://kyoto-art-news.tk/scholarship.xml</a> </li>
-<li><strong>💼 キャリアデザイン情報</strong><br><a href="https://kyotoartnews.page.link/careerdesign">https://kyotoartnews.page.link/careerdesign</a><br>ミラー: <a href="https://kyoto-art-news.tk/careerdesign.xml">https://kyoto-art-news.tk/careerdesign.xml</a> </li>
-</ul>
-</li>
-<li><h4 id="📖_おすすめのRSSリーダー" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">📖 おすすめのRSSリーダー<a href="#📖_おすすめのRSSリーダー" title="📖_おすすめのRSSリーダー"><i class="fas fa-link ml-1" style="display:none;"></i></a></h4>
-<p>上記のRSSを購読して利用するのに適したRSSリーダーをご紹介します。詳しい使い方を知りたい方は、各RSSリーダーのヘルプページを参照してください。</p>
-<ul>
-<li><a href="https://feedly.com/">Feedly</a>(Web, iOS, Android)<br>公式ヘルプページ: <a href="https://blog.feedly.com/help/">https://blog.feedly.com/help/</a><br><a href="https://apps.apple.com/jp/app/id396069556"><img src="https://linkmaker.itunes.apple.com/assets/shared/badges/ja-jp/appstore-lrg.svg" alt="AppStoreで入手" height=”40″ style="margin:10px 10px;"/></a>
-<a href='https://play.google.com/store/apps/details?id=com.devhd.feedly&hl=ja&gl=US'><img alt='Google Play で手に入れよう' src='https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png' width="153"/></a>  </li>
-<li><a href="https://www.inoreader.com/">Inoreader</a>(Web, iOS, Android)<br>公式ハウツーページ: <a href="https://www.inoreader.com/blog/2015/06/inoreader-how-to.html">https://www.inoreader.com/blog/2015/06/inoreader-how-to.html</a><br><a href="https://apps.apple.com/jp/app/id892355414"><img src="https://linkmaker.itunes.apple.com/assets/shared/badges/ja-jp/appstore-lrg.svg" alt="AppStoreで入手" height=”40″ style="margin:10px 10px;"/></a>
-<a href='https://play.google.com/store/apps/details?id=com.innologica.inoreader&hl=ja&gl=US'><img alt='Google Play で手に入れよう' src='https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png' width="153"/></a>  </li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="🎉_謝辞" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">🎉 謝辞<a href="#🎉_謝辞" title="🎉_謝辞"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
-<ul>
-<li><a href="https://developers.google.com/apps-script/">GAS(Google Apps Script)</a></li>
-<li><a href="https://firebase.google.com/docs/dynamic-links?hl=ja">Firebase Dynamic Links</a></li>
-<li><a href="https://circleci.com/">Circle CI</a></li>
-<li><a href="https://docs.gitlab.com/ee/ci/">GitLab CI/CD</a></li>
-<li><a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a></li>
-<li><a href="https://www.freenom.com/ja/index.html">Freenom</a></li>
-</ul>
-<hr>
-<h3 id="👾_作成者" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">👾 作成者<a href="#👾_作成者" title="👾_作成者"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
-<p>GitHub: <a href="https://github.com/redpeacock78">@redpeacock78<br></a>Twitter: <a href="https://twitter.com/kazuki_199778">紅孔雀🍣 (@kazuki_199778)</a><br></a>Weibo: <a href="https://weibo.com/u/5511883870">紅孔雀78</a></p>
-<ul>
-<li><h4 id="📜_リポジトリ" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">📜 リポジトリ<a href="#📜_リポジトリ" title="📜_リポジトリ"><i class="fas fa-link ml-1" style="display:none;"></i></a></h4>
-<ul>
-<li>オリジナル: <a href="https://github.com/redpeacock78/kyoto-art_news">kyoto-art_news</a></li>
-<li>ミラー: <a href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror">kyoto-art-news-rss-mirror</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="🎁_寄付/支援" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">🎁 寄付/支援<a href="#🎁_寄付/支援" title="🎁_寄付/支援"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
-<p>寄付や支援についてはいつでも大歓迎です。
-☕️ 一杯とか🥓 代分の支援をあげると作者が頑張って新機能を追加したり、バグを直したり頑張ってくれるかも。
-各サービスの送金機能のテストの宛先などにお気軽にどうぞ。 </p>
-<table>
-<thead>
-<tr>
-<th align="center"><img src="https://i.imgur.com/yEjo3BS.jpg" style="width: 200px"></th>
-<th align="center"><img src="https://i.imgur.com/3ZVbcH8.png" style="width: 190px"></th>
-<th align="center"><img src="https://i.imgur.com/Mj43KvP.jpg" style="width: 150px"></th>
-<th align="center"><img src="https://i.imgur.com/P99doSK.png" style="height: 165px"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">PayPay</td>
-<td align="center">PayPal</td>
-<td align="center">Kyash</td>
-<td align="center">Amazon Gift(email)</td>
-</tr>
-<tr>
-<td align="center" nowrap><a href="https://paypay.ne.jp/guide/send/?_ga=2.238451843.205875726.1558440708-447181547.1558440708">公式説明ページ</a></td>
-<td align="center" nowrap><a href="https://www.paypal.com/jp/smarthelp/article/faq3919">公式説明ページ</a></td>
-<td align="center" nowrap><a href="https://support.kyash.co/hc/ja/articles/900002413646-%E9%80%81%E9%87%91%E6%96%B9%E6%B3%95">公式説明ページ</a></td>
-<td align="center">Eメールタイプのアマギフを<br><a href="mailto:redpeacock78.donate@info.tamakasu.ga">redpeacock78.donate@info.tamakasu.ga</a><br>に送っていただけると幸いです。</td>
-</tr>
-</tbody></table>
-<p>また、このサービスにもし満足していてGithubのアカウントを所持していれば是非、<a href="https://github.com/redpeacock78/kyoto-art_news">kyoto-art_news</a>のStarを押して頂けると幸いです。Twitterなどでも広めていただけると嬉しいです。</p>
-<hr>
-<h3 id="🥝_ライセンス" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'" onmouseout="this.querySelector('a .fa-link').style.display='none'">🥝 ライセンス<a href="#🥝_ライセンス" title="🥝_ライセンス"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
-<ul>
-<li><a href="https://github.com/redpeacock78/kyoto-art_news">kyoto-art_news</a>: <a href="https://github.com/redpeacock78/kyoto-art_news/blob/master/LICENSE">MIT</a></li>
-<li><a href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror">kyoto-art-news-rss-mirror</a>: <a href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror/blob/master/LICENSE">MIT</a></li>
-</ul>
-</div></body><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script><script type="text/javascript">hljs.initHighlightingOnLoad();</script><script>
-		  $(document).on("mouseover", "h1,h2,h3,h4,h5", function(e) {
-		    $(e.currentTarget).find(".fa-link").text("🔗").show();
-		  });
-		  $(document).on("mouseout", "h1,h2,h3,h4,h5", function(e) {
-		    $(e.currentTarget).find(".fa-link").hide();
-		  });</script><script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
-		  <script>
-		  $.ajax({
-			  url: 'https://kyoto-art-news.tk/all.xml',
-			  type: 'get',
-			  dataType: 'xml',
-			  timeout: 5000,
-			  success: function(xml, status) {
-				  if (status === 'success') {
-					  var row = 0;
-					  var data = [];
-					  var nodeName;
-					  $(xml).find('item').each(function() {
-						  data[row] = {};
-						  $(this).children().each(function() {
-							  nodeName = $(this)[0].nodeName;
-							  data[row][nodeName] = {};
-							  attributes = $(this)[0].attributes;
-							  for (var i in attributes) {
-								  data[row][nodeName][attributes[i].name] = attributes[i].value; // 属性名 = 値
-							  }
-							  data[row][nodeName]['text'] = $(this).text();
-						  });
-						  row++;
-					  });
-					  $('#rss').wrapInner('<ul></ul>');
-					  for (i in data) {
-						function formatDate (date, format) {
-							format = format.replace(/yyyy/g, date.getFullYear());
-							format = format.replace(/MM/g, ('0' + (date.getMonth() + 1)).slice(-2));
-							format = format.replace(/dd/g, ('0' + date.getDate()).slice(-2));
-							format = format.replace(/HH/g, ('0' + date.getHours()).slice(-2));
-							format = format.replace(/mm/g, ('0' + date.getMinutes()).slice(-2));
-							format = format.replace(/ss/g, ('0' + date.getSeconds()).slice(-2));
-							format = format.replace(/SSS/g, ('00' + date.getMilliseconds()).slice(-3));
-							return format;
-						};
-						  $('#rss').find('ul').append('<li>' + formatDate(new Date(data[i].pubDate.text), 'yyyy/MM/dd HH:mm') + ' <a href="' + data[i].link.text + '" target="_blank" rel="noopener noreferrer">' + data[i].title.text + '</a></li>');
-					  }
-				  }
-			  }  
-		  });
-		  </script></html>
+		gtag('config', 'G-YRJ5476T6T');
+	</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="google-site-verification" content="4Aqtp4_-C7mBGIOSWleCfrJF4iqy1KkN_vddru_WR4I" />
+	<!-- OGP Setting -->
+	<meta property="og:title" content="Kyoto Art News RSS" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://kyoto-art-news.tk/ja/index.html" />
+	<meta property="og:image" content="https://imgur.com/837QB8e.png" />
+	<meta property="og:site_name" content="Kyoto Art News RSS" />
+	<meta property="og:description"
+		content='This is for distribution of RSS feeds of "News Information" on the Kyoto University of Art and Design website for students only (Unofficial)' />
+	<!-- Twitter OGP Setting -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@kazuki_199778" />
+	<meta name="twitter:player" content="@kazuki_199778" />
+	<meta name="twitter:tilte" content="Kyoto Art News RSS" />
+	<meta name="twitter:description"
+		content='This is for distribution of RSS feeds of "News Information" on the Kyoto University of Art and Design website for students only (Unofficial)' />
+	<meta name="twitter:image" content="https://imgur.com/837QB8e.png" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai-sublime.min.css"
+		integrity="sha256-kTdkFYZP3TqSvlJAUiZ6/s5L2xu4xsdU9eYMWsKOk74=" crossorigin="anonymous">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css"
+		integrity="sha256-HbgiGHMLxHZ3kkAiixyvnaaZFNjNWLYKD/QG6PWaQPc=" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/guest.bundle.css?v=0.13.0">
+	<style type="text/css">
+		.markdown-body {
+			box-sizing: border-box;
+			min-width: 200px;
+			max-width: 980px;
+			margin: 0 auto;
+			padding: 45px;
+		}
+
+		.markdown-body pre {
+			background: #23241f;
+		}
+
+		.markdown-body strong,
+		.markdown-body h1,
+		.markdown-body h2,
+		.markdown-body h3,
+		.markdown-body h4,
+		.markdown-body h5 {
+			font-weight: 700;
+		}
+
+		#rss {
+			font-size: 16px;
+			color: #333333;
+			padding: 5px;
+		}
+
+		#rss li {
+			padding: 5px;
+			border-bottom: 1px solid #84b2e0;
+		}
+
+		#rss li:first-child {
+			border-top: 0px;
+		}
+
+		#rss li:last-child {
+			border-bottom: 0px;
+		}
+
+		@media (max-width: 767px) {
+			.markdown-body {
+				padding: 15px;
+			}
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<title>📰 Kyoto Art News RSS</title>
+</head>
+
+<body>
+	<div class="markdown-body">
+		<h2 id="📰_Kyoto_Art_News_RSS" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">📰 Kyoto Art News RSS<a
+				href="#📰_Kyoto_Art_News_RSS" title="📰_Kyoto_Art_News_RSS"><i class="fas fa-link ml-1"
+					style="display:none;"></i></a></h2>
+		<div style="text-align: center;">
+			Document: <a href="../index.html">English Version</a> | 日本語版 | <a href="../zh-cn/index.html">中文版</a>
+		</div>
+
+		<h3 id="🤔_これは何ですか?" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">🤔 これは何ですか?<a href="#🤔_これは何ですか?"
+				title="🤔_これは何ですか?"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
+		<p>これは<a href="https://www.kyoto-art.ac.jp/student/">京都造形芸術大学
+				在学生専用サイト</a>に配信されている「お知らせ情報」をRSSとして配信するためのものです。(非公式)
+			公式サイトにはRSSなどの配信サービスが無く、非常に不便だったので制作しました。<br>なお最新情報の反映にはサーバーに負荷を掛けないためにおよそ5分間隔でスクレイピングを行う関係上、情報が公開されてから最大5〜6分の遅延が発生する可能性があります。
+		</p>
+		<hr>
+		<h3 id="💻_コードとサービスの状態" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">💻 コードとサービスの状態<a href="#💻_コードとサービスの状態"
+				title="💻_コードとサービスの状態"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
+		<p><a href="https://github.com/redpeacock78/kyoto-art_news/blob/master/LICENSE"><img
+					src="https://img.shields.io/github/license/redpeacock78/kyoto-art_news" alt="GitHub"></a>
+			<img src="https://img.shields.io/github/languages/count/redpeacock78/kyoto-art_news"
+				alt="GitHub language count">
+			<img src="https://img.shields.io/github/languages/top/redpeacock78/kyoto-art_news"
+				alt="GitHub top language">
+			<img src="https://img.shields.io/github/languages/code-size/redpeacock78/kyoto-art_news"
+				alt="GitHub code size in bytes">
+			<a href="https://github.com/google/clasp"><img
+					src="https://img.shields.io/badge/built%20with-clasp-4285f4.svg" alt="clasp"></a>
+			<a href="https://codeclimate.com/github/redpeacock78/kyoto-art_news/maintainability"><img
+					src="https://api.codeclimate.com/v1/badges/d10bcde61c4f6ecf1740/maintainability" /></a>
+			<br>
+			<a href="https://circleci.com/gh/redpeacock78/kyoto-art_news"><img
+					src="https://circleci.com/gh/redpeacock78/kyoto-art_news.svg?style=shield" alt="CircleCI"></a>
+			<a href="https://github.com/redpeacock78/kyoto-art_news/actions?query=workflow%3A%22check+npm%22"><img
+					src="https://github.com/redpeacock78/kyoto-art_news/workflows/check%20npm/badge.svg?branch=master"></a>
+			<a href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror/commits/master"><img
+					src="https://gitlab.com/redpeacock78/kyoto-art-news-rss/badges/master/pipeline.svg"
+					alt="Gitlab CI"></a>
+			<a href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror/tags"><img
+					src="https://img.shields.io/github/v/tag/redpeacock78/kyoto-art-news-rss-mirror?label=RSS%20Update"
+					alt="RSS Update"></a>
+			<hr>
+		<h3 id="📢_全カテゴリーの最新リアルタイムニュース20件" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">📢 全カテゴリーの最新リアルタイムニュース20件<a
+				href="#📢_全カテゴリーの最新リアルタイムニュース20件" title="📢_全カテゴリーの最新リアルタイムニュース20件"><i class="fas fa-link ml-1"
+					style="display:none;"></i></a></h3>
+		<table>
+			<thead>
+				<tr>
+					<th align="left">
+						<div id="rss"></div>
+					</th>
+				</tr>
+			</thead>
+		</table>
+
+		<hr>
+		<h3 id="🛠_使い方" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">🛠 使い方<a href="#🛠_使い方" title="🛠_使い方"><i
+					class="fas fa-link ml-1" style="display:none;"></i></a></h3>
+		<ul>
+			<li>
+				<h4 id="⛓_URLs" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+					onmouseout="this.querySelector('a .fa-link').style.display='none'">⛓ URLs<a href="#⛓_URLs"
+						title="⛓_URLs"><i class="fas fa-link ml-1" style="display:none;"></i></a></h4>
+				<p>以下のURLをRSSリーダーに登録することで、それぞれのURLに対応した情報を適宜更新・取得することができます。(ミラーサイトも比較的安定していますので、ご利用をお勧めします。)</p>
+				<ul>
+					<li><strong>🌐 総合情報</strong><br><a
+							href="https://kyotoartnews.page.link/all">https://kyotoartnews.page.link/all</a><br>ミラー: <a
+							href="https://kyoto-art-news.tk/all.xml">https://kyoto-art-news.tk/all.xml</a> </li>
+					<li><strong>🏠 生活情報</strong><br><a
+							href="https://kyotoartnews.page.link/life">https://kyotoartnews.page.link/life</a><br>ミラー:
+						<a href="https://kyoto-art-news.tk/life.xml">https://kyoto-art-news.tk/life.xml</a> </li>
+					<li><strong>✏ 学習情報</strong><br><a
+							href="https://kyotoartnews.page.link/teach">https://kyotoartnews.page.link/teach</a><br>ミラー:
+						<a href="https://kyoto-art-news.tk/teach.xml">https://kyoto-art-news.tk/teach.xml</a> </li>
+					<li><strong>🎄 イベント・プロジェクト情報</strong><br><a
+							href="https://kyotoartnews.page.link/event">https://kyotoartnews.page.link/event</a><br>ミラー:
+						<a href="https://kyoto-art-news.tk/event.xml">https://kyoto-art-news.tk/event.xml</a> </li>
+					<li><strong>🚨 緊急情報</strong><br><a
+							href="https://kyotoartnews.page.link/emergency">https://kyotoartnews.page.link/emergency</a><br>ミラー:
+						<a href="https://kyoto-art-news.tk/emergency.xml">https://kyoto-art-news.tk/emergency.xml</a>
+					</li>
+					<li><strong>💰 奨学金情報</strong><br><a
+							href="https://kyotoartnews.page.link/scholarship">https://kyotoartnews.page.link/scholarship</a><br>ミラー:
+						<a
+							href="https://kyoto-art-news.tk/scholarship.xml">https://kyoto-art-news.tk/scholarship.xml</a>
+					</li>
+					<li><strong>💼 キャリアデザイン情報</strong><br><a
+							href="https://kyotoartnews.page.link/careerdesign">https://kyotoartnews.page.link/careerdesign</a><br>ミラー:
+						<a
+							href="https://kyoto-art-news.tk/careerdesign.xml">https://kyoto-art-news.tk/careerdesign.xml</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<h4 id="📖_おすすめのRSSリーダー" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+					onmouseout="this.querySelector('a .fa-link').style.display='none'">📖 おすすめのRSSリーダー<a
+						href="#📖_おすすめのRSSリーダー" title="📖_おすすめのRSSリーダー"><i class="fas fa-link ml-1"
+							style="display:none;"></i></a></h4>
+				<p>上記のRSSを購読して利用するのに適したRSSリーダーをご紹介します。詳しい使い方を知りたい方は、各RSSリーダーのヘルプページを参照してください。</p>
+				<ul>
+					<li><a href="https://feedly.com/">Feedly</a>(Web, iOS, Android)<br>公式ヘルプページ: <a
+							href="https://blog.feedly.com/help/">https://blog.feedly.com/help/</a><br><a
+							href="https://apps.apple.com/jp/app/id396069556"><img
+								src="https://linkmaker.itunes.apple.com/assets/shared/badges/ja-jp/appstore-lrg.svg"
+								alt="AppStoreで入手" height=”40″ style="margin:10px 10px;" /></a>
+						<a href='https://play.google.com/store/apps/details?id=com.devhd.feedly&hl=ja&gl=US'><img
+								alt='Google Play で手に入れよう'
+								src='https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'
+								width="153" /></a>
+					</li>
+					<li><a href="https://www.inoreader.com/">Inoreader</a>(Web, iOS, Android)<br>公式ハウツーページ: <a
+							href="https://www.inoreader.com/blog/2015/06/inoreader-how-to.html">https://www.inoreader.com/blog/2015/06/inoreader-how-to.html</a><br><a
+							href="https://apps.apple.com/jp/app/id892355414"><img
+								src="https://linkmaker.itunes.apple.com/assets/shared/badges/ja-jp/appstore-lrg.svg"
+								alt="AppStoreで入手" height=”40″ style="margin:10px 10px;" /></a>
+						<a href='https://play.google.com/store/apps/details?id=com.innologica.inoreader&hl=ja&gl=US'><img
+								alt='Google Play で手に入れよう'
+								src='https://play.google.com/intl/en_us/badges/images/generic/ja_badge_web_generic.png'
+								width="153" /></a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<hr>
+		<h3 id="🎉_謝辞" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">🎉 謝辞<a href="#🎉_謝辞" title="🎉_謝辞"><i
+					class="fas fa-link ml-1" style="display:none;"></i></a></h3>
+		<ul>
+			<li><a href="https://developers.google.com/apps-script/">GAS(Google Apps Script)</a></li>
+			<li><a href="https://firebase.google.com/docs/dynamic-links?hl=ja">Firebase Dynamic Links</a></li>
+			<li><a href="https://circleci.com/">Circle CI</a></li>
+			<li><a href="https://docs.gitlab.com/ee/ci/">GitLab CI/CD</a></li>
+			<li><a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a></li>
+			<li><a href="https://www.freenom.com/ja/index.html">Freenom</a></li>
+		</ul>
+		<hr>
+		<h3 id="👾_作成者" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">👾 作成者<a href="#👾_作成者" title="👾_作成者"><i
+					class="fas fa-link ml-1" style="display:none;"></i></a></h3>
+		<p>GitHub: <a href="https://github.com/redpeacock78">@redpeacock78<br></a>Twitter: <a
+				href="https://twitter.com/kazuki_199778">紅孔雀🍣 (@kazuki_199778)</a><br></a>Weibo: <a
+				href="https://weibo.com/u/5511883870">紅孔雀78</a></p>
+		<ul>
+			<li>
+				<h4 id="📜_リポジトリ" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+					onmouseout="this.querySelector('a .fa-link').style.display='none'">📜 リポジトリ<a href="#📜_リポジトリ"
+						title="📜_リポジトリ"><i class="fas fa-link ml-1" style="display:none;"></i></a></h4>
+				<ul>
+					<li>オリジナル: <a href="https://github.com/redpeacock78/kyoto-art_news">kyoto-art_news</a></li>
+					<li>ミラー: <a
+							href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror">kyoto-art-news-rss-mirror</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<hr>
+		<h3 id="🎁_寄付/支援" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">🎁 寄付/支援<a href="#🎁_寄付/支援"
+				title="🎁_寄付/支援"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
+		<p>寄付や支援についてはいつでも大歓迎です。
+			☕️ 一杯とか🥓 代分の支援をあげると作者が頑張って新機能を追加したり、バグを直したり頑張ってくれるかも。
+			各サービスの送金機能のテストの宛先などにお気軽にどうぞ。 </p>
+		<table>
+			<thead>
+				<tr>
+					<th align="center"><img src="https://i.imgur.com/yEjo3BS.jpg" style="width: 200px"></th>
+					<th align="center"><img src="https://i.imgur.com/3ZVbcH8.png" style="width: 190px"></th>
+					<th align="center"><img src="https://i.imgur.com/Mj43KvP.jpg" style="width: 150px"></th>
+					<th align="center"><img src="https://i.imgur.com/P99doSK.png" style="height: 165px"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td align="center">PayPay</td>
+					<td align="center">PayPal</td>
+					<td align="center">Kyash</td>
+					<td align="center">Amazon Gift(email)</td>
+				</tr>
+				<tr>
+					<td align="center" nowrap><a
+							href="https://paypay.ne.jp/guide/send/?_ga=2.238451843.205875726.1558440708-447181547.1558440708">公式説明ページ</a>
+					</td>
+					<td align="center" nowrap><a href="https://www.paypal.com/jp/smarthelp/article/faq3919">公式説明ページ</a>
+					</td>
+					<td align="center" nowrap><a
+							href="https://support.kyash.co/hc/ja/articles/900002413646-%E9%80%81%E9%87%91%E6%96%B9%E6%B3%95">公式説明ページ</a>
+					</td>
+					<td align="center">Eメールタイプのアマギフを<br><a
+							href="mailto:redpeacock78.donate@info.tamakasu.ga">redpeacock78.donate@info.tamakasu.ga</a><br>に送っていただけると幸いです。
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>また、このサービスにもし満足していてGithubのアカウントを所持していれば是非、<a
+				href="https://github.com/redpeacock78/kyoto-art_news">kyoto-art_news</a>のStarを押して頂けると幸いです。Twitterなどでも広めていただけると嬉しいです。
+		</p>
+		<hr>
+		<h3 id="🥝_ライセンス" onmouseover="this.querySelector('a .fa-link').style.display='inline-block'"
+			onmouseout="this.querySelector('a .fa-link').style.display='none'">🥝 ライセンス<a href="#🥝_ライセンス"
+				title="🥝_ライセンス"><i class="fas fa-link ml-1" style="display:none;"></i></a></h3>
+		<ul>
+			<li><a href="https://github.com/redpeacock78/kyoto-art_news">kyoto-art_news</a>: <a
+					href="https://github.com/redpeacock78/kyoto-art_news/blob/master/LICENSE">MIT</a></li>
+			<li><a href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror">kyoto-art-news-rss-mirror</a>: <a
+					href="https://github.com/redpeacock78/kyoto-art-news-rss-mirror/blob/master/LICENSE">MIT</a></li>
+		</ul>
+	</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"
+	integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+<script>
+	$(document).on("mouseover", "h1,h2,h3,h4,h5", function (e) {
+		$(e.currentTarget).find(".fa-link").text("🔗").show();
+	});
+	$(document).on("mouseout", "h1,h2,h3,h4,h5", function (e) {
+		$(e.currentTarget).find(".fa-link").hide();
+	});</script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+<script>
+	$.ajax({
+		url: 'https://kyoto-art-news.tk/all.xml',
+		type: 'get',
+		dataType: 'xml',
+		timeout: 5000,
+		success: function (xml, status) {
+			if (status === 'success') {
+				var row = 0;
+				var data = [];
+				var nodeName;
+				$(xml).find('item').each(function () {
+					data[row] = {};
+					$(this).children().each(function () {
+						nodeName = $(this)[0].nodeName;
+						data[row][nodeName] = {};
+						attributes = $(this)[0].attributes;
+						for (var i in attributes) {
+							data[row][nodeName][attributes[i].name] = attributes[i].value; // 属性名 = 値
+						}
+						data[row][nodeName]['text'] = $(this).text();
+					});
+					row++;
+				});
+				$('#rss').wrapInner('<ul></ul>');
+				for (i in data) {
+					function formatDate(date, format) {
+						format = format.replace(/yyyy/g, date.getFullYear());
+						format = format.replace(/MM/g, ('0' + (date.getMonth() + 1)).slice(-2));
+						format = format.replace(/dd/g, ('0' + date.getDate()).slice(-2));
+						format = format.replace(/HH/g, ('0' + date.getHours()).slice(-2));
+						format = format.replace(/mm/g, ('0' + date.getMinutes()).slice(-2));
+						format = format.replace(/ss/g, ('0' + date.getSeconds()).slice(-2));
+						format = format.replace(/SSS/g, ('00' + date.getMilliseconds()).slice(-3));
+						return format;
+					};
+					$('#rss').find('ul').append('<li>' + formatDate(new Date(data[i].pubDate.text), 'yyyy/MM/dd HH:mm') + ' <a href="' + data[i].link.text + '" target="_blank" rel="noopener noreferrer">' + data[i].title.text + '</a></li>');
+				}
+			}
+		}
+	});
+</script>
+
+</html>
