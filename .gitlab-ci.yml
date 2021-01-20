@@ -72,7 +72,8 @@ job:
     - done
     - git add public/*.xml
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
-    - '[[ -z "${ret}" ]] && git commit -m "[ci skip] Push by GitLab runner." && git push'
+    - git_tag=$(date +'%Y%m%d-%H%M%S')
+    - '[[ -z "${ret}" ]] && git commit -m "[ci skip] Push by GitLab runner." && git push && git tag "${git_tag}" && git push --tags'
     - curl -s --request POST --form token=${CI_JOB_TOKEN} --form ref=master --form "variables[TRIGERRED_JOB]=pages" "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline" > /dev/null
 
 pages:
