@@ -85,7 +85,10 @@ pages:
     - web
   stage: deploy
   script:
+    - echo http://dl-cdn.alpinelinux.org/alpine/v3.10/community/ >> /etc/apk/repositories
+    - apk --update --no-cache add brotli
     - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
+    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec brotli -f -k {} \;
   artifacts:
     paths:
       - public
