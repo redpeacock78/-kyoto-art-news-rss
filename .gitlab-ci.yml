@@ -85,7 +85,6 @@ pages:
     - web
   stage: deploy
   script:
-    - apk --update --no-cache add brotli-static > /dev/null
     - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
     - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec brotli -f -k {} \;
   artifacts:
