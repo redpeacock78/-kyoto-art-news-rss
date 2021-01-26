@@ -39,7 +39,7 @@ job:on-schedule:
     - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}" "${CAREERDESIGN_XML}")
     - for ((i=0; i<"${#feeds[@]}"; i++)); do
     -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
-    -   '[[ -z "${feed}" ]] && : || tidy --wrap 0 --indent-cdata true -xml -utf8 -i -o "${xmls[i]}" <(echo "${feed}") 2>/dev/null'
+    -   '[[ -z "${feed}" ]] && : || tidy --wrap 0 --indent-cdata true -xml -utf8 -i -o "${xmls[i]}" <<<"${feed}" 2>/dev/null'
     - done
     - git add public/*.xml
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
@@ -68,7 +68,7 @@ job:
     - xmls=("${ALL_XML}" "${LIFE_XML}" "${TEACH_XML}" "${EVENT_XML}" "${EMERGENCY_XML}" "${SCHOLARSHIP_XML}" "${CAREERDESIGN_XML}")
     - for ((i=0; i<"${#feeds[@]}"; i++)); do
     -   feed=$(curl -sL "${feeds[i]}" | sed -z "/${TAG}/s/.*\\n//g")
-    -   '[[ -z "${feed}" ]] && : || tidy --wrap 0 --indent-cdata true -xml -utf8 -i -o "${xmls[i]}" <(echo "${feed}") 2>/dev/null'
+    -   '[[ -z "${feed}" ]] && : || tidy --wrap 0 --indent-cdata true -xml -utf8 -i -o "${xmls[i]}" <<<"${feed}" 2>/dev/null'
     - done
     - git add public/*.xml
     - ret=$(git status | sed -ne 's|.*\(clean\)|\1|p')
