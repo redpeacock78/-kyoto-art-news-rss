@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<title>404 Not Found</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" href="https://sindresorhus.com/github-markdown-css/github-markdown.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YRJ5476T6T"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() { dataLayer.push(arguments); }
+	gtag('js', new Date());
+
+	gtag('config', 'G-YRJ5476T6T');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    window.onload = function () {
+        setTimeout("location.href='./index.html'", 5000);
+    };
+</script>
+<style type="text/css">
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+    }
+
+    .markdown-body pre {
+        background: #23241f;
+    }
+
+    .markdown-body strong,
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5 {
+        font-weight: 700;
+    }
+</style>
+<div id="mdrender" class="markdown-body"></div>
+<div id="mdraw" style="display:none;">
+## 🤭 Oops!
+404 Not Found.  
+Page not found, redirect to top page after 5 seconds.
+</div>
+<script>
+    document.getElementById("mdrender").innerHTML = marked(document.getElementById("mdraw").innerHTML.replace(/&gt;+/g, '>'));
+</script>
