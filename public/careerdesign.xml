@@ -6,6 +6,13 @@
     <language>ja</language>
     <item>
       <title>null</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/210528-6342/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Fri May 28 2021 20:39:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>null</title>
       <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/210528-6338/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Fri May 28 2021 20:19:09 +0900</pubDate>
@@ -135,13 +142,6 @@
       <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/210311-5714/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Thu Mar 11 2021 09:54:09 +0900</pubDate>
-      <webMaster>京都造形芸術大学</webMaster>
-    </item>
-    <item>
-      <title>null</title>
-      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/210305-5701/</link>
-      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
-      <pubDate>Fri Mar 05 2021 21:54:09 +0900</pubDate>
       <webMaster>京都造形芸術大学</webMaster>
     </item>
   </channel>
