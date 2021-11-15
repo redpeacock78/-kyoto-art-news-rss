@@ -5,6 +5,13 @@
     <link>https://www.kyoto-art.ac.jp/student/</link>
     <language>ja</language>
     <item>
+      <title>null</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/211115-7064/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Mon Nov 15 2021 11:14:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
       <title>代議員クリスマス企画　運営スタッフの募集について</title>
       <link>https://www.kyoto-art.ac.jp/student/life/news/211112-7058/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
@@ -135,13 +142,6 @@
       <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/211105-7012/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Fri Nov 05 2021 15:59:08 +0900</pubDate>
-      <webMaster>京都造形芸術大学</webMaster>
-    </item>
-    <item>
-      <title>null</title>
-      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/211105-6987/</link>
-      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
-      <pubDate>Fri Nov 05 2021 15:39:08 +0900</pubDate>
       <webMaster>京都造形芸術大学</webMaster>
     </item>
   </channel>
