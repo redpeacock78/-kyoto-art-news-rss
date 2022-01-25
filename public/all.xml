@@ -5,6 +5,13 @@
     <link>https://www.kyoto-art.ac.jp/student/</link>
     <language>ja</language>
     <item>
+      <title>null</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/220125-7342/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Tue Jan 25 2022 10:04:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
       <title>2021年度後期 期末筆記試験・レポート試験 内容の掲示について(1/24更新）</title>
       <link>https://www.kyoto-art.ac.jp/student/teaching/news/220124-7284/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
@@ -135,13 +142,6 @@
       <link>https://www.kyoto-art.ac.jp/student/teaching/news/220111-7294/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Tue Jan 11 2022 20:04:45 +0900</pubDate>
-      <webMaster>京都造形芸術大学</webMaster>
-    </item>
-    <item>
-      <title>null</title>
-      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/220111-7293/</link>
-      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
-      <pubDate>Tue Jan 11 2022 12:54:09 +0900</pubDate>
       <webMaster>京都造形芸術大学</webMaster>
     </item>
   </channel>
