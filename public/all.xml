@@ -5,6 +5,13 @@
     <link>https://www.kyoto-art.ac.jp/student/</link>
     <language>ja</language>
     <item>
+      <title>null</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/221208-8814/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Thu Dec 08 2022 19:24:09 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
       <title>「DOUBLE ANNUAL 2023」プレビュー展開催！</title>
       <link>https://www.kyoto-art.ac.jp/student/event/news/221208-8810/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
@@ -135,13 +142,6 @@
       <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/221129-8765/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Tue Nov 29 2022 20:59:09 +0900</pubDate>
-      <webMaster>京都造形芸術大学</webMaster>
-    </item>
-    <item>
-      <title>null</title>
-      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/221128-8761/</link>
-      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
-      <pubDate>Mon Nov 28 2022 17:04:08 +0900</pubDate>
       <webMaster>京都造形芸術大学</webMaster>
     </item>
   </channel>
