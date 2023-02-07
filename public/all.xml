@@ -5,6 +5,13 @@
     <link>https://www.kyoto-art.ac.jp/student/</link>
     <language>ja</language>
     <item>
+      <title>null</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/230207-8972/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Tue Feb 07 2023 18:04:11 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
       <title>【COVID-19】感染者の発生状況について（2/7更新）</title>
       <link>https://www.kyoto-art.ac.jp/student/post/news/230207-6738/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
@@ -135,13 +142,6 @@
       <link>https://www.kyoto-art.ac.jp/student/life/news/230126-8936/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Thu Jan 26 2023 17:00:21 +0900</pubDate>
-      <webMaster>京都造形芸術大学</webMaster>
-    </item>
-    <item>
-      <title>null</title>
-      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/230124-8935/</link>
-      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
-      <pubDate>Tue Jan 24 2023 17:49:09 +0900</pubDate>
       <webMaster>京都造形芸術大学</webMaster>
     </item>
   </channel>
