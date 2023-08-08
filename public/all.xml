@@ -6,6 +6,13 @@
     <language>ja</language>
     <item>
       <title>null</title>
+      <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/230808-9758/</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Tue Aug 08 2023 16:34:08 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
+      <title>null</title>
       <link>https://www.kyoto-art.ac.jp/student/careerdesign/news/230808-9753/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Tue Aug 08 2023 12:34:09 +0900</pubDate>
@@ -135,13 +142,6 @@
       <link>https://www.kyoto-art.ac.jp/student/life/news/230727-9712/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Thu Jul 27 2023 18:05:19 +0900</pubDate>
-      <webMaster>京都造形芸術大学</webMaster>
-    </item>
-    <item>
-      <title>【学園生割引あり】木ノ下歌舞伎 勧進帳</title>
-      <link>https://www.kyoto-art.ac.jp/student/event/news/230726-9708/</link>
-      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
-      <pubDate>Wed Jul 26 2023 16:30:09 +0900</pubDate>
       <webMaster>京都造形芸術大学</webMaster>
     </item>
   </channel>
