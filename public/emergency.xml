@@ -5,6 +5,13 @@
     <link>https://www.kyoto-art.ac.jp/student/</link>
     <language>ja</language>
     <item>
+      <title>null</title>
+      <link>null</link>
+      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
+      <pubDate>Thu Jan 01 1970 17:43:13 +0900</pubDate>
+      <webMaster>京都造形芸術大学</webMaster>
+    </item>
+    <item>
       <title>令和6年能登半島地震発生に伴う安否確認について</title>
       <link>https://www.kyoto-art.ac.jp/student/post/news/240103-10291/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
@@ -135,13 +142,6 @@
       <link>https://www.kyoto-art.ac.jp/student/post/news/220726-6738/</link>
       <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
       <pubDate>Tue Jul 26 2022 13:13:13 +0900</pubDate>
-      <webMaster>京都造形芸術大学</webMaster>
-    </item>
-    <item>
-      <title>【COVID-19】新型コロナウイルス感染防止ガイドライン2022（7/25改訂）</title>
-      <link>https://www.kyoto-art.ac.jp/student/post/news/220725-8249/</link>
-      <description>&lt;img src="https://raw.githubusercontent.com/redpeacock78/kyoto-art_news/images/images/logo.jpg" referrerpolicy="no-referrer"&gt;</description>
-      <pubDate>Mon Jul 25 2022 13:28:13 +0900</pubDate>
       <webMaster>京都造形芸術大学</webMaster>
     </item>
   </channel>
